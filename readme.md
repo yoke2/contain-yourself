@@ -1,7 +1,8 @@
 # Contents
 
 - [Introduction](#introduction)
-- [Installation](#isntallation)
+- [Installation](#installation)
+- [Using Docker](#using-docker)
 
 ## Introduction
 
@@ -41,3 +42,42 @@ Or if you use Homebrew Cask,
 ```
 $ brew cask install docker
 ```
+
+## Using Docker
+
+Start running the Docker app. Check that it is running on the command line:
+
+```
+$ docker info
+Containers: 3
+ Running: 0
+ Paused: 0
+ Stopped: 3
+Images: 1
+Server Version: 1.13.1
+...
+```
+
+### Jupyter Python Notebook
+
+You can pull down the image with:
+
+```
+$ docker pull quay.io/dksg/python3-notebook
+```
+
+Once that finishes downloading, you should see something like:
+
+```
+$ docker images
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+quay.io/dksg/python3-notebook   latest              f01e49a5a922        3 days ago          2.61 GB
+```
+
+Take that `IMAGE ID` and start it up with this command:
+
+```
+run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
+```
+
+You will get instructions for link to paste into your browser address box.
