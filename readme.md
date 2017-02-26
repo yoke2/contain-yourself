@@ -36,8 +36,8 @@ Follow the setup instructions for your flavor of Linux here: https://docs.docker
 
 Follow the setup instructions here: https://docs.docker.com/docker-for-mac/install/
 
-Or if you use homebrew, 
+Or if you use Homebrew Cask, 
 
 ```
-$ brew install docker
+$ brew cask install docker
 ```
