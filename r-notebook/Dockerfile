@@ -33,6 +33,4 @@ RUN conda config --add channels r && \
     'r-caret=6.0*' \
     'r-rcurl=1.95*' \
     'r-crayon=1.3*' \
-    'bioconda' \
-    'r-plotly' \
     'r-randomforest=4.6*' && conda clean -tipsy
