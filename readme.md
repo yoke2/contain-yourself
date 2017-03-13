@@ -77,7 +77,35 @@ quay.io/dksg/python3-notebook   latest              f01e49a5a922        3 days a
 Take that `IMAGE ID` and start it up with this command:
 
 ```
-run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
+docker run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
 ```
 
-You will get instructions for link to paste into your browser address box.
+You will get instructions for link to paste into your browser address box. If you're using Docker Toolbox, you should use the custom IP address (default http://192.168.99.100/)
+
+Note: /path/to/local/directory would be the path to the directory in where you store your .ipynb
+
+### Jupyter R Notebook
+
+You can pull down the image with:
+
+```
+$ docker pull quay.io/dksg/r-notebook
+```
+
+Once that finishes downloading, you should see something like:
+
+```
+$ docker images
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+quay.io/dksg/r-notebook   latest              0fd93ce8a437        3 days ago          2.63 GB
+```
+
+Take that `IMAGE ID` and start it up with this command:
+
+```
+docker run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work 0fd93ce8a437
+```
+
+You will get instructions for link to paste into your browser address box. If you're using Docker Toolbox, you should use the custom IP address (default http://192.168.99.100/)
+
+Note: /path/to/local/directory would be the path to the directory in where you store your .ipynb
