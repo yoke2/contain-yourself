@@ -2,9 +2,9 @@
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Ensure that Docker is Running](#Ensure-that-Docker-is-Running)
-- [Using Python Notebooks](#Using-Docker-for-Python-Notebooks)
-- [Using R Notebooks](#Using-Docker-for-R-Notebooks)
+- [Ensure that Docker is Running](#ensure-that-docker-is-running)
+- [Using Python Notebooks](#using-docker-for-r-notebooks)
+- [Using R Notebooks](#using-docker-for-r-notebooks)
 
 ## Introduction
 
