@@ -34,3 +34,7 @@ RUN conda config --add channels r && \
     'r-rcurl=1.95*' \
     'r-crayon=1.3*' \
     'r-randomforest=4.6*' && conda clean -tipsy
+    
+RUN conda config --add channels BIMSBbioinfo && \
+    conda install --quiet --yes \
+    'r-plotly=4.5.2' && conda clean -tipsy
