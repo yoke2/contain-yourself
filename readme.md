@@ -97,7 +97,7 @@ docker load --input quay.io_SLASH_dksg_SLASH_python3-notebook_1.0.0.tar
 3. This will return a loaded image id.
 4. Tag the newly added image with the version from the filename by running the following:
 ```
-docker tag <loaded image id> quay.io/dksg/python3-notebook_:1.0.0
+docker tag <loaded image id> quay.io/dksg/python3-notebook:1.0.0
 
 ```
 
