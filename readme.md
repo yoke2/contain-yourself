@@ -107,7 +107,7 @@ docker tag <loaded image id> quay.io/dksg/python3-notebook:1.0.0
 Take the `IMAGE ID` from previous step and start it up with this command:
 
 ```
-docker run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
+docker run -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
 ```
 **Note:** /path/to/local/directory should be replaced by **an existing local directory in your laptop.**
 This is where your notebooks (.ipynb) will be stored.
@@ -117,6 +117,12 @@ You will get instructions for link to paste into your browser address box. If yo
 
 ### Once the notebook is running, you may create a new notebook and try the samples in this tutorial:
 https://plot.ly/python/ipython-notebook-tutorial/
+
+Note: The following python script may be needed to run first in order to run the above tutorial samples:
+```
+import plotly
+plotly.offline.init_notebook_mode() # run at the start of every ipython notebook
+```
 
 
 ## Using Docker for R Notebooks
@@ -162,7 +168,7 @@ docker tag <loaded image id> quay.io/dksg/r-notebook:1.0.1
 Take the `IMAGE ID` from previous step and start it up with this command:
 
 ```
-docker run -it -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
+docker run -p 8888:8888 -v /path/to/local/directory:/home/jovyan/work f01e49a5a922
 ```
 **Note:** /path/to/local/directory should be replaced by **an existing local directory in your laptop.**
 This is where your notebooks (.ipynb) will be stored.
