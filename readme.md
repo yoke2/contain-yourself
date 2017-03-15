@@ -5,7 +5,7 @@
 - [Ensure that Docker is Running](#ensure-that-docker-is-running)
 - [Using Python Notebooks](#using-docker-for-python-notebooks)
 - [Using R Notebooks](#using-docker-for-r-notebooks)
-- [Workflow](#workflow)
+- [Adding new libraries](#adding-new-libraries)
 
 ## Introduction
 
@@ -174,7 +174,7 @@ You will get instructions for link to paste into your browser address box. If yo
 https://plot.ly/r/using-r-in-jupyter-notebooks/#examples
 
 
-## Workflow
+## Adding new libraries
 
 If there's a python or R library that you need, you can install it in your container, but unless the library is persisted to the image, your scripts that use the library will not run on somebody else's machine. Each project will have a person assigned as a *library curator* and they will be able to include the library in the project's docker image. Workflow should be:
 
