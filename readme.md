@@ -5,6 +5,7 @@
 - [Ensure that Docker is Running](#ensure-that-docker-is-running)
 - [Using Python Notebooks](#using-docker-for-python-notebooks)
 - [Using R Notebooks](#using-docker-for-r-notebooks)
+- [Workflow](#workflow)
 
 ## Introduction
 
@@ -171,3 +172,13 @@ You will get instructions for link to paste into your browser address box. If yo
 
 ### Once the notebook is running, you may create a new notebook and try the following samples:
 https://plot.ly/r/using-r-in-jupyter-notebooks/#examples
+
+
+## Workflow
+
+If there's a python or R library that you need, you can install it in your container, but unless the library is persisted to the image, your scripts that use the library will not run on somebody else's machine. Each project will have a person assigned as a *library curator* and they will be able to include the library in the project's docker image. Workflow should be:
+
+1. You're puttering along when you realise that you want to add your favourite nlp library.
+2. You install it in your container, and try it out. It works great!
+3. Show it to your project's curator and convince them that it's a useful library. Their default mode is lazy and they will try to point you to an existing library. You show them the hot shiny feature the one you want has.
+4. The curator changes the requirements file in our docker file Github repo, Quay auto-magically builds a new image, and when people need to run your code, they need to use this new image.
