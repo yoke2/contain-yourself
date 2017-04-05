@@ -1,3 +1,3 @@
 FROM rocker/rstudio		
 	
-RUN R -e 'install.packages(c("ggplot2", "dplyr", "tidyr"))'
+RUN R -e 'install.packages(c("ggplot2", "dplyr", "tidyr", "data.table", "shiny"))'
