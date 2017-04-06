@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:9e056d61b7a5
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
