@@ -220,7 +220,7 @@ quay.io/dksg/ojoy-rstudio              1.0.2               1c1e06209032        1
 ```
 
 
-### Running a RStudio from the pulled/loaded image
+### Running RStudio from the pulled/loaded image
 
 Start it up with this command:
 
