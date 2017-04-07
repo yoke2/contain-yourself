@@ -5,6 +5,7 @@
 - [Ensure that Docker is Running](#ensure-that-docker-is-running)
 - [Using Python Notebooks](#using-docker-for-python-notebooks)
 - [Using R Notebooks](#using-docker-for-r-notebooks)
+- [Using RStudio](#using-docker-for-rstudio)
 - [Adding new libraries](#adding-new-libraries)
 
 ## Introduction
@@ -178,6 +179,61 @@ You will get instructions for link to paste into your browser address box. If yo
 
 ### Once the notebook is running, you may create a new notebook and try the following samples:
 https://plot.ly/r/using-r-in-jupyter-notebooks/#examples
+
+
+## Using Docker for RStudio
+### Getting an RStudio Container Image
+
+There are at least two ways of getting an image:
+
+- Pulling from a repository (such as quay.io)
+- Loading from a file
+
+#### Pulling from a repository
+You can pull down the image with:
+
+```
+$ docker pull quay.io/dksg/ojoy-rstudio:1.0.2
+```
+
+Once that finishes downloading, you should see something like:
+
+```
+$ docker images
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+quay.io/dksg/ojoy-rstudio              1.0.2               1c1e06209032        13 hours ago        1.166 GB
+```
+
+#### Loading from a file
+This is an alternative method. Skip this if you already have pulled from a repository successfully. Otherwise, follow the steps below:
+
+1. Copy the tar file (get this from a DK corelead) to your local directory (e.g. quay.io_SLASH_dksg_SLASH_ojoy-rstudio_1.0.2.tar)
+2. In your local directory, run the following docker command:
+```
+docker load --input quay.io_SLASH_dksg_SLASH_ojoy-rstudio_1.0.2.tar
+```
+3. Once loaded, you should be able to see the new image when you run "docker images":
+```
+$ docker images
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+quay.io/dksg/ojoy-rstudio              1.0.2               1c1e06209032        13 hours ago        1.166 GB
+```
+
+
+### Running a RStudio from the pulled/loaded image
+
+Start it up with this command:
+
+```
+docker run -p 8787:8787 -v /path/to/local/directory:/home/rstudio/foobar quay.io/dksg/ojoy-rstudio:1.0.2
+```
+**Note:** /path/to/local/directory should be replaced by **an existing local directory in your laptop.**
+This is where your data/scripts will be stored.
+e.g. docker run -d -p 8787:8787 -v /Users/johndoe/datadive:/home/rstudio/foobar quay.io/dksg/ojoy-rstudio:1.0.2
+
+You should be able to access RStudio in the browser via http://localhost:8787. If you're using Docker Toolbox, you should use the custom IP address (default http://192.168.99.100:8787)
+Username: rstudio
+Password: rstudio
 
 
 ## Adding new libraries
