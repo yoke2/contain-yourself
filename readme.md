@@ -231,8 +231,10 @@ docker run -p 8787:8787 -v /path/to/local/directory:/home/rstudio/foobar quay.io
 This is where your data/scripts will be stored.
 e.g. docker run -d -p 8787:8787 -v /Users/johndoe/datadive:/home/rstudio/foobar quay.io/dksg/ojoy-rstudio:1.0.2
 
-You should be able to access RStudio in the browser via http://localhost:8787. If you're using Docker Toolbox, you should use the custom IP address (default http://192.168.99.100:8787)
-Username: rstudio
+You should be able to access RStudio in the browser via http://localhost:8787. If you're using Docker Toolbox, you should use the custom IP address (default http://192.168.99.100:8787) 
+
+Username: rstudio 
+
 Password: rstudio
 
 
