@@ -24,3 +24,4 @@ RUN R -e 'library(devtools); \
 
 RUN R -e 'library(devtools); \
           install_version("vcd", "1.4-3");'
+
