@@ -37,7 +37,7 @@ RUN R -e 'library(devtools); \
           install_version("forecast", "8.0");'
 
 RUN R -e 'library(devtools); \
-          install_version("RSQLite", "1.1.2");'
+          install_version("RSQLite", "1.1-2");'
 
 RUN R -e 'library(devtools); \
           install_version("reshape2", "1.4.2");'
@@ -46,10 +46,10 @@ RUN R -e 'library(devtools); \
           install_version("nycflights13", "0.2.2");'
 
 RUN R -e 'library(devtools); \
-          install_version("caret", "6.0.73");'
+          install_version("caret", "6.0-73");'
 
 RUN R -e 'library(devtools); \
-          install_version("rcurl", "1.95.4.8");'
+          install_version("RCurl", "1.95-4.8");'
 
 RUN R -e 'library(devtools); \
           install_version("crayon", "1.3.2");'
@@ -61,16 +61,16 @@ RUN R -e 'library(devtools); \
           install_version("igraph", "1.0.1");'
 
 RUN R -e 'library(devtools); \
-          install_version("NLP", "0.1.10");'
+          install_version("NLP", "0.1-10");'
 
 RUN R -e 'library(devtools); \
-          install_version("tm", "0.7.1");'
+          install_version("tm", "0.7-1");'
 
 RUN R -e 'library(devtools); \
           install_version("magrittr", "1.5");'
 
 RUN R -e 'library(devtools); \
-          install_version("quanteda", "0.9.9.24");'
+          install_version("quanteda", "0.9.9-24");'
 
 RUN R -e 'library(devtools); \
           install_version("stringr", "1.2.0");'
@@ -85,19 +85,26 @@ RUN R -e 'library(devtools); \
           install_version("DT", "0.2");'
 
 RUN R -e 'library(devtools); \
-          install_version("RColorBrewer", "1.1.2");'
+          install_version("RColorBrewer", "1.1-2");'
 
 RUN R -e 'library(devtools); \
           install_version("broom", "0.4.2");'
 
 RUN R -e 'library(devtools); \
-          install_version("MASS", "7.3.45");'
+          install_version("MASS", "7.3-45");'
 
 RUN R -e 'library(devtools); \
-          install_version("randomForest", "4.6.12");'
+          install_version("randomForest", "4.6-12");'
 
 RUN R -e 'library(devtools); \
           install_version("wordcloud", "2.5");'
 
 RUN R -e 'library(devtools); \
-          install_version("tidyverse", "1.1.1");'
+          install_version("likert", "1.3.5");'
+
+RUN echo 'deb http://ftp.ca.debian.org/debian unstable main' >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y libxml2-dev
+
+RUN R -e 'library(devtools); \
+            install_version("tidyverse", "1.1.1");'
