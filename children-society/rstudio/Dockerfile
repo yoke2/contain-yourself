@@ -6,7 +6,6 @@ RUN R -e 'install.packages("devtools")'
 RUN R -e 'library(devtools); \
           install_version("ggplot2", "2.2.1");'
 
-
 RUN R -e 'library(devtools); \
           install_version("dplyr", "0.5.0");'
 
@@ -100,5 +99,5 @@ RUN R -e 'library(devtools); \
 RUN R -e 'library(devtools); \
           install_version("wordcloud", "2.5");'
 
-RUN R -e 'library(devtools);
+RUN R -e 'library(devtools); \
           install_version("tidyverse", "1.1.1");'
