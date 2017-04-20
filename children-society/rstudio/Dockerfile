@@ -102,6 +102,16 @@ RUN R -e 'library(devtools); \
 RUN R -e 'library(devtools); \
           install_version("likert", "1.3.5");'
 
+RUN echo 'deb http://ftp.ca.debian.org/debian unstable main' >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y libxml2-dev
+
+RUN R -e 'library(devtools); \
+          install_version("tidyverse", "1.1.1");'
+
+RUN R -e 'library(devtools); \
+          install_github("exploratory-io/exploratory_func");'
+
 RUN R -e 'library(devtools); \
           install_version("corrplot", "0.77");'
 
@@ -125,13 +135,3 @@ RUN R -e 'library(devtools); \
 
 RUN R -e 'library(devtools); \
           install_version("fields", "8.10");'
-
-RUN echo 'deb http://ftp.ca.debian.org/debian unstable main' >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y libxml2-dev
-
-RUN R -e 'library(devtools); \
-          install_version("tidyverse", "1.1.1");'
-
-RUN R -e 'library(devtools); \
-          install_github("exploratory-io/exploratory_func");'
