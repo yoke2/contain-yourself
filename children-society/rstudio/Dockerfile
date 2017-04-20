@@ -102,9 +102,36 @@ RUN R -e 'library(devtools); \
 RUN R -e 'library(devtools); \
           install_version("likert", "1.3.5");'
 
+RUN R -e 'library(devtools); \
+          install_version("corrplot", "0.77");'
+
+RUN R -e 'library(devtools); \
+          install_version("ggdendro", "0.1-20");'
+
+RUN R -e 'library(devtools); \
+          install_version("spatstat", "1.50-0");'
+
+RUN R -e 'library(devtools); \
+          install_version("visNetwork", "1.0.3");'
+
+RUN R -e 'library(devtools); \
+          install_version("googleVis", "0.6.2");'
+
+RUN R -e 'library(devtools); \
+          install_version("topicmodels", "0.2-5");'
+
+RUN R -e 'library(devtools); \
+          install_version("LDAvis", "0.3.2");'
+
+RUN R -e 'library(devtools); \
+          install_version("fields", "8.10");'
+
 RUN echo 'deb http://ftp.ca.debian.org/debian unstable main' >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y libxml2-dev
 
 RUN R -e 'library(devtools); \
-            install_version("tidyverse", "1.1.1");'
+          install_version("tidyverse", "1.1.1");'
+
+RUN R -e 'library(devtools); \
+          install_github("exploratory-io/exploratory_func");'
